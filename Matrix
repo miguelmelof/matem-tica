@@ -1,0 +1,66 @@
+import java.util.Scanner;
+class Matrix {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Qual a quantidade de linhas e colunas da matriz? ");
+        int lin = sc.nextInt();
+
+        int col = sc.nextInt();
+
+        int[][] matriz = new int[lin][col];
+
+        System.out.println("Quais os elementos da matriz? ");
+        for (int l = 0; l < lin; l++) {
+            for (int c = 0; c < col; c++) {
+                matriz[l][c] = sc.nextInt();
+            }
+        }
+        System.out.println("Matriz A:");
+        for (int l = 0; l < lin; l++) {
+            for (int c = 0; c < col; c++) {
+                System.out.printf("%3d | ", matriz[l][c]);
+            }
+            System.out.printf("%n");
+        }
+
+        System.out.println("Matriz transposta de A:");
+
+        for (int l = 0; l < col; l++) {
+            for (int c = 0; c < lin; c++) {
+                System.out.printf("%3d | ", matriz[c][l]);
+            }
+            System.out.printf("%n");
+        }
+
+        System.out.println("Qual a posição do elemento que você quer? ");
+        int x = sc.nextInt();
+        int y = sc.nextInt();
+        int i = x - 1;
+        int j = y - 1;
+
+        System.out.printf("Elemento da linha %d coluna %d : %d\n", x, y, matriz[i][j]);
+
+        System.out.println("Qual a posição do elemento que você deseja trocar o valor? ");
+        x = sc.nextInt();
+        y = sc.nextInt();
+        int I = x - 1;
+        int J = y - 1;
+        System.out.println("Qual o novo valor desse elemento? ");
+        int valor = sc.nextInt();
+
+        matriz[I][J] = valor;
+
+        System.out.printf("Elemento da linha %d coluna %d alterado para : %d \n", x, y, matriz[I][J]);
+
+        System.out.println("Matriz A alterada:");
+        for (int l = 0; l < lin; l++) {
+            for (int c = 0; c < col; c++) {
+                System.out.printf("%3d | ", matriz[l][c]);
+            }
+            System.out.printf("%n");
+        }
+    }
+}
